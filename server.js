@@ -2,18 +2,23 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Serve static files from "public" folder
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
+app.use(cors());
+
+// File path for responses
+const responsesFile = path.join(__dirname, 'responses.json');
 
 // Endpoint to handle survey submission
 app.post('/submit-survey', (req, res) => {
     const responseData = req.body;
-    fs.appendFile('responses.json', JSON.stringify(responseData) + '\n', err => {
+    fs.appendFile(responsesFile, JSON.stringify(responseData) + '\n', err => {
         if (err) {
             console.error("Error saving data:", err);
             res.status(500).send('Error saving data');
@@ -25,5 +30,5 @@ app.post('/submit-survey', (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
