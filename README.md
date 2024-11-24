@@ -60,7 +60,7 @@ This backend interacts with the frontend hosted on Vercel:
 
 ## ✉️ Contact
 For questions or issues, contact:
-- **Kapil Meena**: [kapil.meen@kgpian.iitkgp.ac.in](mailto:kapil.meen@kgpian.iitkgp.ac.in)
+- **Kapil Meena**: [kapil.meena@kgpian.iitkgp.ac.in](mailto:kapil.meen@kgpian.iitkgp.ac.in)
 - **Prof. Arkopal Goswami**: [akgoswami@infra.iitkgp.ac.in](mailto:akgoswami@infra.iitkgp.ac.in)
 
 ## ❤️ Acknowledgments
